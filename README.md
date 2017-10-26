@@ -2,14 +2,14 @@
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 * 10/26 
 - set up FlaskApp: `cd /var/www` `sudo mkdir *App*` `cd *App*` `sudo mkdir *App*` `cd *App*` `sudo mkdir static templates`
-`
+```
 |----*App*
 |---------*App*
 |--------------static
 |--------------templates
-`
+```
 - `sudo nano __init__.py` with
-`
+```
 from flask import Flask
 app = Flask(__name__)
 @app.route("/")
@@ -17,12 +17,12 @@ def home():
     return "Hello, I am your new App"
 if __name__ == "__main__":
     app.run()
-`
+```
 - `sudo apt-get install python-pip` `sudo pip install virtualenv` `sudo virtualenv venv` -- establish and enter virtual environment
 - `sudo pip install Flask` `sudo python __init__.py` -- install Flask under venv and run the test .py under venv; it should bounce back `* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)`
 - `Press CTRL+C` & `deactivate`
 - `sudo nano /etc/apache2/sites-available/myApp.conf` with
-`
+```
 <VirtualHost *:80>
 		ServerName mywebsite.com
 		ServerAdmin admin@mywebsite.com
@@ -40,10 +40,10 @@ if __name__ == "__main__":
 		LogLevel warn
 		CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-`
+```
 - `sudo a2ensite myApp`
 - `cd ..` `sudo nano myapp.wsgi` with
-`
+```
 #!/usr/bin/python
 import sys
 import logging
@@ -52,7 +52,7 @@ sys.path.insert(0,"/var/www/myApp/")
 
 from myApp import app as application
 application.secret_key = 'super secret key'
-`
+```
 - `sudo service apache2 restart`
 - test app deployed
 
