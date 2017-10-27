@@ -1,7 +1,7 @@
    # Overview
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
-* 10/26
 -----
+* 10/26
 - set up WinSCP connection; 
 - got permission denies while changing files as 'ubuntu' user; 
 - solved the problem by `sudo chown -R -v ubuntu /var/www/` in ssh
@@ -60,12 +60,11 @@ application.secret_key = 'super secret key'
 ```
 - `sudo service apache2 restart`
 - test app deployed
-
+-----
 * 10/25 
------
 - changed instance type from micro ($8/mon) to nano ($4/mon), ubuntu 16.04, 0.5G/15G.
-* 10/22 
 -----
+* 10/22 
 - initiated an instance on EC2, ubuntu 16.04, 1G/15G.
 - created an elastic IP and associated the instance to the IP.
 - ssh to the instance ```ssh -i *key.pem* ubuntu@ip-address```   
