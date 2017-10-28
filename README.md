@@ -1,6 +1,11 @@
    # Overview
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 -----
+* 10/27
+- set up app with bootstrap css;
+- Notepad++ (ver 7.4) had the issue of cannot edit/save empty file, updated to 7.5;
+- all html templates need to be under the templates directory... 
+-----
 * 10/26
 - set up WinSCP connection; 
 - got permission denies while changing files as 'ubuntu' user; 
