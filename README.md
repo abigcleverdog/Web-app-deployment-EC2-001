@@ -1,6 +1,9 @@
    # Overview
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 -----
+* 10/28
+- watched several tutorial videos now I want to rebuild the Item Catalog App with Bootstrap from scratch. I may spend some time on the Bootstrap page in the next a few days.
+-----
 * 10/27
 - set up app with bootstrap css;
 - Notepad++ (ver 7.4) had the issue of cannot edit/save empty file, updated to 7.5;
