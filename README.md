@@ -2,6 +2,13 @@
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 10/31 Tue
+- installed Postgresql, SqlAlchemy, psycopg2; `sudo apt-get install postgresql postgresql-contrib` `service postgresql status` `sudo -i -u postgres`(login as postgres, version 9.5.9) ` createuser -s pythonflask`(create pythonflask as superuser) `sudo -u postgres createdb --owner=pythonflask itemcat`; `sudo apt-get install python-sqlalchemy`; `sudo apt-get install python-psycopg2`
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171031_Capture.PNG "Project Snapshot")
+- used old dbsetup.py to set up database structure (change `engine = create_engine('sqlite:///itemcat.db')` to `engine = create_engine(‘postgresql://catalog:catalog@localhost:5432/itemcat’)`); run it on the server.
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171031_2_Capture.PNG "Project Snapshot")
+- next step will be populating the database with mock cats and items and users ...
+-----
 * 10/30 Mon
 - worked some more on the error issue; updated all bootstrap files (redownload and copy over); rebooted the instance and restart the service; still not working.
 - then I went to the serious debugging mode and changed the main.html line by line; seem there is a problem when I swtich from loading bootstrap.min.css or bootstrap.min.js over internet to over local host. checked developer's tool and opened 'IP/static/css/bootstrap.min.css', found it does not match with what I have put on the server. Now it seems my browser is storing old .css and .js for me and skipped my updates...; tried CTRL+F5; it worked...; like I expected, very very dumb mistake; I am happy that I did not give up and figured it out eventually.
