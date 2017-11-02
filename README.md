@@ -2,7 +2,7 @@
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
-* 11/01 Tue
+* 11/01 Wed
 - modified `itempop.py` to `dbpop.py` to populate the database
 - changed 'index.html' to be database-driven
 - added @app.route in `__init__.py` for showing a catalog
@@ -11,7 +11,7 @@
 - tricks learned: `{{ var|length }}` `{% if %}` in .html; 
 ![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171101_1_Capture.PNG "Project Snapshot")
 ![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171101_2_Capture.PNG "Project Snapshot")
-- next step will be populating the database with mock cats and items and users ...
+- next step will be creating pages for displaying, adding, editing, and deleting an item...
 -----
 * 10/31 Tue
 - installed Postgresql, SqlAlchemy, psycopg2; `sudo apt-get install postgresql postgresql-contrib` `service postgresql status` `sudo -i -u postgres`(login as postgres, version 9.5.9) ` createuser -s pythonflask`(create pythonflask as superuser) `sudo -u postgres createdb --owner=pythonflask itemcat`; `sudo apt-get install python-sqlalchemy`; `sudo apt-get install python-psycopg2`
