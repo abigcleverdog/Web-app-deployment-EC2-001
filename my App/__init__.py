@@ -31,17 +31,18 @@ def home():
 @app.route('/catitems/<cat_name>/<int:cat_id>/items/')
 def cat(cat_name, cat_id):
     items = session.query(Item).filter_by(category_id=cat_id).all()
-    length = len(items)
     cat = session.query(Category).filter_by(id=cat_id).one()
     return render_template('items.html', cats=cats, items=items,
-                           length=length, name=cat.name)
+                           cat=cat)
 
 # Show an item
 
-@app.route('/catitems/<cat_name>/<item_name>/<int:item_id>')
-def item(cat_name, item_name, item_id):
+@app.route('/catitems/<int:cat_id>/<item_name>/<int:item_id>')
+def item(cat_id, item_name, item_id):
     item = session.query(Item).filter_by(id=item_id).one()
-    return render_template('item.html', item=item, cat_name=cat_name)
+    cat = session.query(Category).filter_by(id=cat_id).one()
+    return render_template('item.html', cats=cats, item=item,
+                           cat=cat)
 
 
 @app.route("/test/")

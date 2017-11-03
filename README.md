@@ -2,6 +2,12 @@
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/02 Thu
+- modified `__init__.py` routes for index, catlog, and item; the old way was working OK but only pass limited information to the rendered page. for instance, I passed `cat_name` and `length` to the page as I need those variables on the specific page. However, it seems to me now that if I pass the list `cats` and object `cat` and `item` to the page, I will be more efficient as when I need to change the layout and the information displaying, I can just work on the html templates to extract the info passed down instead of going back to the .py file to change the query or variables. This approach also makes my .py codes more consistent and readable.
+
+- next step will be creating pages for displaying, adding, editing, and deleting an item...
+- concern about the adding, editing and deleting page will be hostile attack from, well anyone found the link at this stage. I guess I may put them on a test page and disable the link when I am done working with them on a day. These pages may need to be hided until I set up the Oauth and security check.
+-----
 * 11/01 Wed
 - modified `itempop.py` to `dbpop.py` to populate the database
 - changed 'index.html' to be database-driven

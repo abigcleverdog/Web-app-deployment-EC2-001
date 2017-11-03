@@ -1,14 +1,14 @@
 {% extends "main.html" %}
 {% block content %}
 {% include "header.html" %}
-
+	
 <div class="row">
     <div class="col-xs-4">
 		<div class="list-group text-center">
 			{% for c in cats %}
-				{% if c.name == cat.name %}
+				{% if cat.name == c.name %}
 				<a href = "{{url_for('cat', cat_name=c.name, cat_id=c.id)}}"
-					class="list-group-item active"><span class="badge">{{ c.items|length }}</span>{{ c.name }}
+					class="list-group-item active"><span class="badge">{{ c.items|length }}</span>{{ cat.name }}
 				</a>
 				{% else %}
 				<a href = "{{url_for('cat', cat_name=c.name, cat_id=c.id)}}"
@@ -20,16 +20,14 @@
     </div>
 	
     <div class="col-xs-8">
-		<h2>{{cat.name}} Items ({{items|length}} items)</h2>
-		<ul class="list-group">
-			{% for item in items %}
-				<li class="list-group-item">
-					<a href = "{{url_for('item', cat_id=cat.id, item_name=item.name, item_id=item.id)}}">
-						<span>{{item.name}}</span>
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<h3 class="panel-title">{{item.name}}</h3>
+			</div>
+			<div class="panel-body">
+			{{item.description}}
+		    </div>
+		</div>
 	</div>
 </div>
 
