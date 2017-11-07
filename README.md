@@ -2,10 +2,26 @@
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/06 Mon
+- Reset psql as old 'user' table does not contain a 'password' column;
+- This was supposed to be doable via `ALTER TABLE user ADD COLUMN password varcahr(250)` However, it kept popping 'Syntax error' or 'Peer Authentification failed'
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171106_1_Capture.PNG "Project Snapshot")
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171106_2_Capture.PNG "Project Snapshot")
+- Eventually I did 'DROP DATABASE' as postgres and reestablished the DB; It is probably not the best thing to to with real applications, I will look into it more when I have time; Just for now if I need to do something similar to a running app, better ways would be 1' add that COLUMN; 2' add a separate table to associate user_name with password; 3' reestablish DB with different name and save the original for back-up;
+- Set up the registration page. 
+Quite a bit of learning here: 
+1. WTForms template and validators with regex, which is a defense against sql injection
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171106_3_Capture.PNG "Project Snapshot")
+2. Postgresql and MySQL use different syntax, my guess is that the returned query results are different too; as I am following a tutorial using MySQL, I need to review some psql and sqlalchemy (blue in the pic)
+3. encrypt password with `sha256_crypt.encrypt(form.password.data)` (red in the pic)
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171106_4_Capture.PNG "Project Snapshot")
+- next step will be updating other pages for login_session check.
+-----
 * 11/04 Sat
 - back deployed the app to local VM to edit pages before setting up security guard.
 - 'add/edit/delete item' pages added.
 - links on pages updated.
+
 ![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171104_1.gif "Project GIF")
 
 - next step will be creating users management.
