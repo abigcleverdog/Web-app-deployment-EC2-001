@@ -1,6 +1,16 @@
    # Overview
    This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
+
+-----
+* 11/06 Mon
+- built the login page. hard coded the `<input pattern="[A-Za-z0-9]+">` in html to prevent sql inj;;
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171108_1_Capture.PNG "Project Snapshot")
+- worked on the login/logout logics in the header.html
+- built the login_required wraper
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171108_2_Capture.PNG "Project Snapshot")
+- next step will be updating other pages for login_session check.
+- I need to put up a new project 'Student tracker' or maybe better named as 'Our Graduates' the Student table should contain firstName, middleName, lastName, classOf, url_linkedin, url_facebook, careerPath, etc.
 -----
 * 11/06 Mon
 - Reset psql as old 'user' table does not contain a 'password' column;
