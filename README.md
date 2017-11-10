@@ -3,7 +3,17 @@
 
 
 -----
-* 11/06 Mon
+* 11/10 Fri
+- relaunch a new mini instance on AWS-EC2 for "Our Graduates";
+- best practice for set up is to move small steps and confirm frequently;
+
+-----
+* 11/09 Thu
+- launch a new mini instance on AWS-EC2 for "Our Graduates";
+- set the server and the IP shows a Flask driven page;
+- screwed up when using `url_for` to link `static` files; the server respond as 404; could nout figure out why;
+-----
+* 11/08 Wed
 - built the login page. hard coded the `<input pattern="[A-Za-z0-9]+">` in html to prevent sql inj;;
 ![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171108_1_Capture.PNG "Project Snapshot")
 - worked on the login/logout logics in the header.html
@@ -104,7 +114,7 @@ def home():
 if __name__ == "__main__":
     app.run()
 ```
-- `sudo apt-get install python-pip` `sudo pip install virtualenv` `sudo virtualenv venv` -- establish and enter virtual environment
+- `sudo apt-get install python-pip` `sudo pip install virtualenv` `sudo virtualenv venv` `source venv/bin/activate`-- establish and enter virtual environment ***need to be done in the /app/app folder
 - `sudo pip install Flask` `sudo python __init__.py` -- install Flask under venv and run the test .py under venv; it should bounce back `* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)`
 - `Press CTRL+C` & `deactivate`
 - `sudo nano /etc/apache2/sites-available/myApp.conf` with
