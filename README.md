@@ -1,11 +1,18 @@
    # Overview
-   This is a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
+   11/08--present: building "our Graduates"
+   10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 
 -----
 * 11/10 Fri
 - relaunch a new mini instance on AWS-EC2 for "Our Graduates";
 - best practice for set up is to move small steps and confirm frequently;
+- configured the server to run Flask; tested accessibility of 'static';
+- setup database
+- created convert.py to extract data from a .csv file and transfer into the database;
+- homepage set with database support:
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171110_1_Capture.PNG "Project Snapshot")
+
 
 -----
 * 11/09 Thu
@@ -64,7 +71,7 @@ Quite a bit of learning here:
 - next step will be creating pages for displaying, adding, editing, and deleting an item...
 -----
 * 10/31 Tue
-- installed Postgresql, SqlAlchemy, psycopg2; `sudo apt-get install postgresql postgresql-contrib` `service postgresql status` `sudo -i -u postgres`(login as postgres, version 9.5.9) ` createuser -s pythonflask`(create pythonflask as superuser) `sudo -u postgres createdb --owner=pythonflask itemcat`; `sudo apt-get install python-sqlalchemy`; `sudo apt-get install python-psycopg2`
+- installed Postgresql, SqlAlchemy, psycopg2; `sudo apt-get install postgresql postgresql-contrib` `service postgresql status` `sudo -i -u postgres`(login as postgres, version 9.5.9) ` createuser -s pythonflask`(create pythonflask as superuser) `psql` `ALTER USER pythonflask WITH PASSWORD 'a password'` `\q` `exit` `sudo -u postgres createdb --owner=pythonflask itemcat`; `sudo apt-get install python-sqlalchemy`; `sudo apt-get install python-psycopg2`
 ![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171031_Capture.PNG "Project Snapshot")
 - used old dbsetup.py to set up database structure (change `engine = create_engine('sqlite:///itemcat.db')` to `engine = create_engine(‘postgresql://catalog:catalog@localhost:5432/itemcat’)`); run it on the server.
 ![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171031_2_Capture.PNG "Project Snapshot")
@@ -159,9 +166,9 @@ application.secret_key = 'super secret key'
 - initiated an instance on EC2, ubuntu 16.04, 1G/15G.
 - created an elastic IP and associated the instance to the IP.
 - ssh to the instance ```ssh -i *key.pem* ubuntu@ip-address```   
-- `sudo apt-get update`, `sudo apt-get upgrade`, and `sudo apt-get autoremove` were used to keep linux packages current.
-- `sudo nano /etc/ssh/sshd_config`changed ssh timeout to be 2 hrs (30s*240)
+- `sudo apt-get update`, `sudo apt-get upgrade`, and `sudo apt-get autoremove` were used to keep linux packages current. `sudo timedatectl set-timezone America/New_York`
+- `sudo nano /etc/ssh/sshd_config`changed ssh timeout to be 2 hrs (30s*240) ClientAliveCountMax 240; ClientAliveInterval 30
 - `sudo ufw default deny incoming`, `sudo ufw default allow outgoing`, `sudo ufw allow xxx` and `sudo ufw enable` were used to configure the firewall to only listen to SSH(port 22 and 2222), HTTP(port 80 and 8080), and NTP(port 123)
-- `sudo apt-get install apache2/libapache2-mod-wsgi python-dev/python`--install Apache2/Python mod-wsgi/Python
+- `sudo apt-get install apache2 libapache2-mod-wsgi python-dev python`--install Apache2/Python mod-wsgi/Python
 - `sudo a2enmod wsgi` --enable wsgi
 - 'Apache2 Ubuntu Default Page' dispalyed on the IP.
