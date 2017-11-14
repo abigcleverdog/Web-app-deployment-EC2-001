@@ -4,6 +4,14 @@
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/14 Tue
+- Changed homepage imgs to thumbnail carosauls
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171114_1_Capture.PNG "Project Snapshot")
+
+next would be 
+- add 'email', 'LinkedIn', 'Facebook" icons to the thumbnails
+- add statistics to homepage and class of pages
+-----
 * 11/12 Sun
 - added 'Class of' pages
 - edited navbar; added a search form
