@@ -2,6 +2,16 @@
    11/08--present: building "our Graduates";
    
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
+   
+-----
+* 11/15 Wed
+- Added d3.js statistics to homepage
+- current files backed up
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171115_1_Capture.PNG "Project Snapshot")
+
+next would be 
+- add 'email', 'LinkedIn', 'Facebook" icons to the thumbnails
+
 
 -----
 * 11/14 Tue
