@@ -3,6 +3,20 @@
    
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
    
+   
+-----
+* 11/16 Thu
+- Mirrored app to localhost (should have done this from the very beginning)
+- Sort students by lastname
+- Added links to the bars; added hover effect in css for UX
+- made an alternative homepage layout
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171116_1_Capture.PNG "Project Snapshot")
+
+next would be 
+- add 'email', 'LinkedIn', 'Facebook" icons to the thumbnails
+- user system
+- pic upload
+   
 -----
 * 11/15 Wed
 - Added d3.js statistics to homepage
@@ -11,7 +25,9 @@
 
 next would be 
 - add 'email', 'LinkedIn', 'Facebook" icons to the thumbnails
-
+- change layout of homepage, the barchart can replace the left list once links are added, it can be placed on top of the student pics; 
+- user system
+- pic upload
 
 -----
 * 11/14 Tue
