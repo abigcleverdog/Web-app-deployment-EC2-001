@@ -2,7 +2,40 @@
    11/08--present: building "our Graduates";
    
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
+
+-----
+* 11/21 Tue
+- created admin user; tested /login and /logout;
+- for future students, it may be a good idea to auto generate their accounts with ('fname[0]'+'lname') / [default password]; I will keep the data structure as is for now though; The idea is that for version 1.0 I just need one master user to input the info, others are consumers, they can send requests via email to update info;
+
+next would be 
+- user system; complete the admin user links;
+- pic upload; now need to link the uploaded pic with specific student;
+        
+-----
+* 11/20 Mon
+- finished video/documentation tutorial on upload pic files (it seems the extension control is not working as I can still upload .pdf files)
+
+next would be 
+- user system
+- pic upload
+     
+-----
+* 11/19 Sun
+- add 'email', 'LinkedIn', 'Facebook" icons with Font-Awesome
+
+next would be 
+- user system
+- pic upload
    
+-----
+* 11/17 Fri
+- Synced EC2 site with local site
+
+next would be 
+- add 'email', 'LinkedIn', 'Facebook" icons to the thumbnails
+- user system
+- pic upload
    
 -----
 * 11/16 Thu
