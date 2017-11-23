@@ -4,6 +4,17 @@
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/22 Wed
+- link updated for login/logout;
+- pic upload and update database to display uploaded profile pic
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171122_1_Capture.PNG "Project Snapshot")
+- align pictures;
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171122_2_Capture.PNG "Project Snapshot")
+
+next would be 
+- sync with EC2;
+    
+-----
 * 11/21 Tue
 - created admin user; tested /login and /logout;
 - for future students, it may be a good idea to auto generate their accounts with ('fname[0]'+'lname') / [default password]; I will keep the data structure as is for now though; The idea is that for version 1.0 I just need one master user to input the info, others are consumers, they can send requests via email to update info;
