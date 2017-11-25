@@ -4,6 +4,15 @@
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/24 Fri
+- go through the login_required logic;
+- configured postgresql to add column to 'student'; the problem was the peer authentification; solved it by change the `/etc/postgresql/9.5/main/pg_hba.conf` 'local  all  postgres  peer' to 'local  all  postgres  md5' then log on as 'user' + 'password'; 
+- tried to sync the app on EC2, there is a "Internal Server Error" whenever I include this `from passlib.hash import sha256_crypt`; no similiar cases found online;
+
+next would be 
+- nuc the server and start fresh;
+    
+-----
 * 11/22 Wed
 - link updated for login/logout;
 - pic upload and update database to display uploaded profile pic
