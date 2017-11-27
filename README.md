@@ -4,6 +4,31 @@
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/26 Sun
+- App status:
+1. the homepage display the information of some most graduated students, statistics of our graduates;
+1' an alternative homepage layout is designed for mobile device viewport;
+2. user can navigate to different classes to find certain student via either the left-hand tabs or the bars on the 'grads vs. year' plot;
+3. created a master user for editing some content via the web site;
+4. once logged in as the master user, one can upload profile pic for each student;
+next would be 
+- send out for review;
+- add search function;
+- add support/donation function;
+    
+-----
+* 11/25 Sat
+- just before nuc the server, my self-esteem popped in and asked 'Really? You cannot do better than that?' well, I thought, OK, what I can do? Maybe reinstall python on the server; or maybe I should look up the error log on the server `sudo tail -f /var/log/apache2/error.log`; Now it says clearly ```[Sat Nov 25 11:48:24.973853 2017] [wsgi:error] [pid 17586:tid 140622446909184] [client 73.156.145.73:33707]     from passlib.hash import sha256_crypt, referer: http://13.58.39.136/2014/
+[Sat Nov 25 11:48:24.973871 2017] [wsgi:error] [pid 17586:tid 140622446909184] [client 73.156.145.73:33707] ImportError: No module named passlib.hash, referer: http://13.58.39.136/2014/
+```
+Now search 'wsgi No module named passlib.hash'; well there we go `sudo pip install paramiko PyYAML jinja2 httplib2 passlib` it seems working now;
+- Nah, I was wrong, it browser was loading cache. The server still says 'No module named passlib.hash'; keep searching; someone suggested this is an environment issue, I need some how run `flask/bin/pip install passlib`; I remember installing Flask under venv; so activated the vene `source venv/bin/activate`; `sudo -H pip install passlib`; get into 'venv/bin' found pip; `(sudo -H) pip install passlib`, server says 'Requirement already satisfied'; `deactivate` out the env; restart apache; it is working now;
+- now EC2 is sync with local instance; most pages work; the file uploaing is rejected as 'permission denied' for the uploading folder; seems a linux user permission isssue; need to grant permission to the user for apache (maybe www-data); as I still need the ubuntu user to have full control so that I can use WinSCP to transfer files, I would like to test 1. add a usergroup of 'www-data' and 'ubuntu', 2. grant permission to the usergroup; The internet on my computer is experiencing some issue, it says 'Unidentified network No Internet Access' for a while. has to pause the work.
+- it worked: 1. `sudo usermod -a -G myusergroup ubuntu` `sudo usermod -a -G myusergroup www-data` 2. `sudo chgrp -R myusergroup /var/www/` 3. `sudo chmod -R g+w /var/www/` 4. `sudo reboot`; now both apache and ubuntu have control of the www folder. upload tested, WinSCP tested. **seems still one issue: the uploaded file cannot be deleted via WinSCP maybe because it belongs to 'www-data'?? Let's try `sudo chmod -R 775 /var/www/` -- nope, doesn't work; search for linux delete file owned by another user -- well does not seem to be a easy thing to do. It may be easier to just alter the sql from the server site if I need to unlink a pic.
+next would be 
+- send out for review;
+    
+-----
 * 11/24 Fri
 - go through the login_required logic;
 - configured postgresql to add column to 'student'; the problem was the peer authentification; solved it by change the `/etc/postgresql/9.5/main/pg_hba.conf` 'local  all  postgres  peer' to 'local  all  postgres  md5' then log on as 'user' + 'password'; 
