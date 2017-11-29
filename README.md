@@ -4,6 +4,15 @@
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
 
 -----
+* 11/29 Wed
+- Created a semi-live search bar with dummy dataset; The search engine is powered on javascript, should be enough for small datasets, given the number of students (10/yr * 100yr), runtime should be under 1 second.
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171129_1_Capture.PNG "Project Snapshot")
+next would be 
+- add search function-link up the database
+- add support/donation function;
+- add a master editting page for bulk updating;
+    
+-----
 * 11/26 Sun
 - App status:
 1. the homepage display the information of some most graduated students, statistics of our graduates;
@@ -18,7 +27,9 @@ next would be
     
 -----
 * 11/25 Sat
-- just before nuc the server, my self-esteem popped in and asked 'Really? You cannot do better than that?' well, I thought, OK, what I can do? Maybe reinstall python on the server; or maybe I should look up the error log on the server `sudo tail -f /var/log/apache2/error.log`; Now it says clearly ```[Sat Nov 25 11:48:24.973853 2017] [wsgi:error] [pid 17586:tid 140622446909184] [client 73.156.145.73:33707]     from passlib.hash import sha256_crypt, referer: http://13.58.39.136/2014/
+- just before nuc the server, my self-esteem popped in and asked 'Really? You cannot do better than that?' well, I thought, OK, what I can do? Maybe reinstall python on the server; or maybe I should look up the error log on the server `sudo tail -f /var/log/apache2/error.log`; Now it says clearly 
+```
+[Sat Nov 25 11:48:24.973853 2017] [wsgi:error] [pid 17586:tid 140622446909184] [client 73.156.145.73:33707]     from passlib.hash import sha256_crypt, referer: http://13.58.39.136/2014/
 [Sat Nov 25 11:48:24.973871 2017] [wsgi:error] [pid 17586:tid 140622446909184] [client 73.156.145.73:33707] ImportError: No module named passlib.hash, referer: http://13.58.39.136/2014/
 ```
 Now search 'wsgi No module named passlib.hash'; well there we go `sudo pip install paramiko PyYAML jinja2 httplib2 passlib` it seems working now;
