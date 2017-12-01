@@ -2,7 +2,16 @@
    11/08--present: building "our Graduates";
    
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
-
+   
+   
+-----
+* 11/30 Thu
+- Linked database to search; adjust css to confine result box;
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171130_1_Capture.PNG "Project Snapshot")
+next would be 
+- add support/donation function;
+- add a master editting page for bulk updating;
+    
 -----
 * 11/29 Wed
 - Created a semi-live search bar with dummy dataset; The search engine is powered on javascript, should be enough for small datasets, given the number of students (10/yr * 100yr), runtime should be under 1 second.
