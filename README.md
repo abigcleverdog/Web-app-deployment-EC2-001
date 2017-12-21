@@ -3,7 +3,15 @@
    
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
    
-   
+  
+-----
+* 12/20 Wed
+- Added a JavaScript covering div, need a passcode to view the content;
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20171220_1_Capture.PNG "Project Snapshot")
+next would be 
+- add support/donation function;
+- add a master editting page for bulk updating;
+       
 -----
 * 11/30 Thu
 - Linked database to search; adjust css to confine result box;
