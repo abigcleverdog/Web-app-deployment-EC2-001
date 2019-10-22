@@ -1,9 +1,23 @@
    # Overview
+   2019-10: add new function 'grade scantron' to the website.
+   
    11/08--present: building "our Graduates";
    
    10/22--11/08: a detailed note while deplying the "Item Catalog" app to AWS EC2 service.
    
   
+-----
+* 2019/10/22 Tue
+- After a couple of weeks of reconfiguring and testing, the 'grade scantron' function is now online;
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20191022_1_Capture.PNG "Project Snapshot")
+- Sample input and outputs;
+![alt text](https://github.com/abigcleverdog/Web-app-deployment-EC2-001/blob/master/img/20191022_2_Capture.PNG "Project Snapshot")
+so far, the flask and grading scripts are running on py3 instead of py2, upgrading was a lot of 'FUN'; installing new packages for image processing, pdf converting etc. was directed to certain path; swapped 4G disk for memory to handle the grading; as a side task, the server is now on a new key as the old one is lost.
+
+next would be 
+- upgrade grading script for auto ROI detect/calibration;
+- provide feedback while grading, right now grading 100 pages would have ~10min blank waiting time, pretty bad UI experience;
+
 -----
 * 12/20 Wed
 - Added a JavaScript covering div, need a passcode to view the content;
