@@ -1,4 +1,12 @@
    # Overview
+   Quick note to future self: 2020/4/15, AWS hardware retired and one of my instance need to restart. 1. start the instance on AWS; 2. get the new IP, in browser, this should show the Apache start page; PuTTY to the IP and `sudo nano /etc/apache2/sites-available/xyz.conf` with
+```
+<VirtualHost *:80>
+		ServerName <NEW IP>
+		
+```
+   `sudo a2ensite xyz(usually folder name and already enabled)`  `sudo service apache2 restart`
+   
    2019-10: add new function 'grade scantron' to the website.
    
    11/08--present: building "our Graduates";
